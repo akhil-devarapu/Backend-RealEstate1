@@ -79,44 +79,54 @@ This is a fully functional backend API for a real estate listing platform built 
 
 real-estate-backend/
 │
-├── config/ # Database config
-│ └── database.js
-│
-├── controllers/ # All route logic
-│ └── authController.js
-│ └── propertyController.js
-│ └── inquiryController.js
-│ └── favoritesController.js
-│ └── projectController.js
-│ └── priceController.js
-│ └── brokerController.js
-│ └── reviewController.js
-│ └── alertController.js
-│ └── adminController.js
-│ └── sellerController.js
-│
-├── middleware/ # Auth middleware
-│ └── auth.js
-│ └── roleMiddleware.js
-│
-├── routes/ # API endpoints
-│ └── authRoutes.js
-│ └── propertyRoutes.js
-│ └── searchRoutes.js
-│ └── inquiryRoutes.js
-│ └── favoriteRoutes.js
-│ └── projectRoutes.js
-│ └── priceRoutes.js
-│ └── brokerRoutes.js
-│ └── reviewRoutes.js
-│ └── alertRoutes.js
-│ └── adminRoutes.js
-│ └── sellerRoutes.js
-│
 ├── src/
-│ └── app.js # Entry point
-│ └── initdb.js # DB schema setup
-│
-├── .env # Secrets & Config
+│   ├── config/                   # DB connection
+│   │   └── database.js
+│   │
+│   ├── controllers/             # All controller logic
+│   │   ├── adminController.js
+│   │   ├── alertController.js
+│   │   ├── authController.js
+│   │   ├── brokerController.js
+│   │   ├── favoritesController.js
+│   │   ├── inquiryController.js
+│   │   ├── priceController.js
+│   │   ├── projectController.js
+│   │   ├── propertyController.js
+│   │   ├── reviewController.js
+│   │   ├── searchController.js
+│   │   ├── sellerController.js
+│   │   └── userController.js
+│   │
+│   ├── middleware/              # Middlewares for auth, roles
+│   │   ├── auth.js
+│   │   └── roleMiddleware.js
+│   │
+│   ├── routes/                  # All API route files
+│   │   ├── adminRoutes.js
+│   │   ├── alertRoutes.js
+│   │   ├── authRoutes.js
+│   │   ├── brokerRoutes.js
+│   │   ├── favoriteRoutes.js
+│   │   ├── inquiryRoutes.js
+│   │   ├── priceRoutes.js
+│   │   ├── projectRoutes.js
+│   │   ├── propertyRoutes.js
+│   │   ├── reviewRoutes.js
+│   │   ├── searchRoutes.js
+│   │   └── sellerRoutes.js
+│   │
+│   ├── app.js                  # Main Express app entry
+│   └── initdb.js               # SQLite DB schema/init script
+│----Database/
+|        |---scheema.sql
+|       |----seed.sql
+|
+|-----data/
+|      |---real_estate.db
+|
+├── .env                        # Environment secrets (ignored by Git)
 ├── .gitignore
+├── package.json
+├── package-lock.json
 └── README.md
